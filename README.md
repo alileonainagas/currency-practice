@@ -34,7 +34,7 @@ yarn install
 
 </br>
 
-**_After all packages are installed, type in your console the next ones to start ReactJS..._**
+**_After all packages are installed, type in your console the next command to run the Vite React App..._**
 
 </br>
 
