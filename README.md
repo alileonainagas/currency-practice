@@ -12,7 +12,7 @@ _Ça va mes amis!_ The current project it's just me testing new features on _Vit
 
 ---
 
-**->** Click on this _[Link](https://alileonainagas.github.io/currency-practice/)_ to go to Currency Practice page. **<-**
+**->** Click on this _[Link](https://alileonainagas-currency-practice.netlify.app)_ to go to Currency Practice page. **<-**
 
 ---
 
