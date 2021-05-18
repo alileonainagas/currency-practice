@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { HelmetProvider, Helmet } from 'react-helmet-async';
 import styled from '@emotion/styled';
-import image from '././assets/cryptomonedas.png';
 import axios from 'axios';
+
+//Assets
+import image from '././assets/cryptomonedas.png';
+import favicon from '././assets/CPFavicon.svg'
+
+//App Components
 import Form from './components/Form';
 import Cotization from './components/Cotization';
 import Spinner from './components/Spinner';
@@ -93,34 +99,43 @@ function App() {
 	}, [coins, cryptos]);
 
 	return (
-		<>
-			<AppHeader />
-			<Container>
-				<div>
-					<Image
-						src={image}
-						alt='image-crypto'
-					/>
-				</div>
-				<div>
-					<Title>Cotización de Criptomonedas</Title>
-					<Form
-						saveCoin={saveCoin}
-						saveCrypto={saveCrypto}
-					/>
-				</div>
-			</Container>
-			<CotizaContainer>
-				{
-					loading ?
-						<Spinner />
-						: <Cotization
-							resume={resume}
+		<HelmetProvider>
+			<>
+				<Helmet>
+					{/* Public Metadata implementation */}
+					<link rel="icon" type="image/svg+xml" href={favicon} />
+					<meta name="description" content="Single Page Application to primarily check upon crypto's pricing in real time." />
+					<title>Currency Practice</title>
+				</Helmet>
+				<AppHeader />
+				<Container>
+					<div>
+						<Image
+							src={image}
+							alt='image-crypto'
 						/>
-				}
-			</CotizaContainer>
-			<AppFooter />
-		</>
+					</div>
+					<div>
+						<Title>Cotización de Criptomonedas</Title>
+						<Form
+							saveCoin={saveCoin}
+							saveCrypto={saveCrypto}
+						/>
+					</div>
+				</Container>
+				<CotizaContainer>
+					{
+						loading ?
+							<Spinner />
+							: <Cotization
+								resume={resume}
+							/>
+					}
+				</CotizaContainer>
+				<AppFooter />
+			</>
+		</HelmetProvider>
+
 	);
 }
 
